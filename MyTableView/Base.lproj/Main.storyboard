@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h7S-Cb-UnB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h7S-Cb-UnB">
                                 <rect key="frame" x="20" y="95" width="560" height="485"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="HkO-6Z-W9M">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UglyCell" rowHeight="93" id="HkO-6Z-W9M" customClass="UglyCell" customModule="MyTableView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HkO-6Z-W9M" id="l9V-HV-Ccs">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="92.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JCt-0p-0EP">
@@ -36,7 +36,7 @@
                                                         <constraint firstAttribute="height" constant="75" id="VJJ-0P-6MS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4D-2G-gam">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="F4D-2G-gam">
                                                     <rect key="frame" x="91" y="8" width="469" height="75"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="37"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -52,6 +52,10 @@
                                                 <constraint firstItem="F4D-2G-gam" firstAttribute="leading" secondItem="JCt-0p-0EP" secondAttribute="trailing" constant="8" id="nYW-EZ-tMR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mainImage" destination="JCt-0p-0EP" id="yk5-xR-K9S"/>
+                                            <outlet property="mainLabel" destination="F4D-2G-gam" id="V2L-yB-mDj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -88,6 +92,9 @@
                             <constraint firstAttribute="trailing" secondItem="fvL-IR-tc5" secondAttribute="trailing" id="fk5-NP-ccl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="h7S-Cb-UnB" id="3Mn-Rm-KKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
